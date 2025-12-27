@@ -1,6 +1,12 @@
 import { notFound } from 'next/navigation'
 import { getPostBySlug, getAllPosts } from '@/lib/blog-data'
-import { HOW_TO_CHOOSE_SMARTPHONE_CONTENT, THINGS_TO_CHECK_CONTENT } from '@/lib/blog-content'
+import {
+    HOW_TO_CHOOSE_SMARTPHONE_CONTENT,
+    THINGS_TO_CHECK_CONTENT,
+    WHY_PRICES_CHANGE_CONTENT,
+    IS_BUYING_SAFE_CONTENT,
+    ONEPLUS_VS_SAMSUNG_CONTENT
+} from '@/lib/blog-content'
 import { generateBlogPostingSchema, generateBreadcrumbSchema } from '@/lib/schema'
 import { format } from 'date-fns'
 import type { Metadata } from 'next'
@@ -48,7 +54,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const CONTENT_MAP: Record<string, string> = {
     'how-to-choose-smartphone-2025': HOW_TO_CHOOSE_SMARTPHONE_CONTENT,
     'things-check-buying-phone-online': THINGS_TO_CHECK_CONTENT,
-}
+    'why-phone-prices-change-online': WHY_PRICES_CHANGE_CONTENT,
+    'is-buying-phones-online-safe': IS_BUYING_SAFE_CONTENT,
+    'oneplus-vs-samsung-mid-range': ONEPLUS_VS_SAMSUNG_CONTENT,
+};
 
 export default function BlogPost({ params }: Props) {
     const post = getPostBySlug(params.slug)
